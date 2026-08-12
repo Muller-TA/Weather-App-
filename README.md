@@ -2,7 +2,7 @@
 
 A weather app that lets you search any city and see current conditions, an hourly forecast, and a 5-day outlook — with full control over which units everything is displayed in.
 
-**[Live Demo](#)** [<!-- add your deployed link here -->](https://weather-app-six-vert-93.vercel.app/)
+**[Live Demo](https://weather-app-six-vert-93.vercel.app/)**
 **Frontend Mentor Challenge:** [Weather app](https://www.frontendmentor.io/challenges/weather-app)
 
 ## What it does
