@@ -1,8 +1,10 @@
 import bgLarge from "../assets/images/bg-today-large.svg";
 import sunnyIcon from "../assets/images/icon-sunny.webp";
-import { getWeatherIcon } from "../weatherIcon";
-import { convertTemp, getTempUnit } from "../unitConversions.js";
-function CurrentWeather({ weather, tempUnit }) {
+import { getWeatherIcon } from "../store/weatherIcon.js";
+import { convertTemp, getTempUnit } from "../store/unitConversions.js";
+import useWeatherStore from "../store/useWeatherStore.js";
+function CurrentWeather({ weather }) {
+  const tempUnit = useWeatherStore((s) => s.tempUnit);
   const today = new Date().toLocaleDateString("en-US", {
     weekday: "long",
     month: "short",
