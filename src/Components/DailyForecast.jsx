@@ -1,8 +1,8 @@
-import { getWeatherIcon } from "../weatherIcon";
-import { useState } from "react";
-import { convertTemp, getTempUnit } from "../unitConversions.js";
-
-function DailyForecast({ forecast, tempUnit }) {
+import { getWeatherIcon } from "../store/weatherIcon.js";
+import { convertTemp } from "../store/unitConversions.js";
+import useWeatherStore from "../store/useWeatherStore.js";
+function DailyForecast({ forecast }) {
+  const tempUnit = useWeatherStore((s) => s.tempUnit);
   if (!forecast) {
     return (
       <div className="mt-8">
