@@ -1,8 +1,10 @@
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { getWeatherIcon } from "../weatherIcon";
-import { convertTemp, getTempUnit } from "../unitConversions.js";
-function HourlyForecast({ forecast, tempUnit }) {
+import { getWeatherIcon } from "../store/weatherIcon.js";
+import { convertTemp } from "../store/unitConversions.js";
+import useWeatherStore from "../store/useWeatherStore.js";
+function HourlyForecast({ forecast }) {
+  const tempUnit = useWeatherStore((s) => s.tempUnit);
   const [selectedDay, setSelectedDay] = useState(null);
   const [isOpen, setIsOpen] = useState(null);
   if (!forecast) {
