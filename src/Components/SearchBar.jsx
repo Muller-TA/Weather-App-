@@ -1,6 +1,8 @@
 import { Search } from "lucide-react";
 import { useState } from "react";
-function SearchBar({ onSearch }) {
+import useWeatherStore from "../store/useWeatherStore.js";
+function SearchBar() {
+  const onSearch = useWeatherStore((s) => s.setPlace);
   const [inputValue, setInputValue] = useState("");
   const handleSearch = () => {
     if (inputValue.trim() !== "") {
