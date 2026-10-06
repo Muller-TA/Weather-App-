@@ -5,8 +5,13 @@ import {
   getTempUnit,
   getWindUnit,
   getPrecipUnit,
-} from "../unitConversions.js";
-function WeatherStats({ weather, tempUnit, windUnit, precipUnit }) {
+} from "../store/unitConversions.js";
+import useWeatherStore from "../store/useWeatherStore.js";
+function WeatherStats({ weather }) {
+  const tempUnit = useWeatherStore((s) => s.tempUnit);
+  const windUnit = useWeatherStore((s) => s.windUnit);
+  const precipUnit = useWeatherStore((s) => s.precipUnit);
+
   if (!weather) {
     return (
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
