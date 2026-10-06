@@ -1,16 +1,15 @@
-import React from "react";
 import weatherIcon from "../assets/images/logo.svg";
 import { Settings, ChevronDown, Check } from "lucide-react";
 import { useState } from "react";
-function Header({
-  tempUnit,
-  setTempUnit,
-  windUnit,
-  setWindUnit,
-  precipUnit,
-  setPrecipUnit,
-}) {
-  const [isOpen, setIsOpen] = useState(null);
+import useWeatherStore from "../store/useWeatherStore.js";
+function Header() {
+  const tempUnit = useWeatherStore((s) => s.tempUnit);
+  const setTempUnit = useWeatherStore((s) => s.setTempUnit);
+  const windUnit = useWeatherStore((s) => s.windUnit);
+  const setWindUnit = useWeatherStore((s) => s.setWindUnit);
+  const precipUnit = useWeatherStore((s) => s.precipUnit);
+  const setPrecipUnit = useWeatherStore((s) => s.setPrecipUnit);
+  const [isOpen, setIsOpen] = useState(false);
   const isAllMetric =
     tempUnit === "celsius" && windUnit === "kmh" && precipUnit === "mm";
 
